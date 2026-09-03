@@ -1,11 +1,13 @@
 import express from 'express';
 import { createStatisticsService } from './application/statistics-service.js';
+import { requireJwt } from './middleware/jwt.js';
 
 export function createApp() {
   const app = express();
   const service = createStatisticsService();
   app.use(express.json({ limit: '1mb' }));
   app.get('/health', (_request, response) => response.json({ status: 'ok' }));
+  if (process.env.JWT_SECRET) app.use('/internal', requireJwt(process.env.JWT_SECRET));
   app.post('/internal/v1/statistics', (request, response) => {
     try {
       const statistics = service.execute(request.body?.matrices);

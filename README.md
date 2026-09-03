@@ -27,3 +27,5 @@ El contrato OpenAPI está en `openapi/openapi.yaml`. Puedes importarlo en [Swagg
 
 - `PORT`: puerto HTTP, por defecto `8081`.
 - `JWT_SECRET`: secreto JWT, requerido cuando se habilita autenticación.
+
+Cuando `JWT_SECRET` está configurado, los endpoints bajo `/internal` requieren un JWT Bearer válido.
