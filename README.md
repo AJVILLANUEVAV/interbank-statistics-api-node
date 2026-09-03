@@ -2,9 +2,22 @@
 
 API REST de estadísticas con Node.js y Express. Calcula mínimo, máximo, promedio, suma total y diagonalidad de matrices recibidas.
 
-## Estado
+La estructura sigue arquitectura hexagonal: `src/statistics.js` contiene el dominio, `src/application` el caso de uso y `src/server.js` el adaptador HTTP de entrada.
 
-Scaffold inicial. La implementación, pruebas y Dockerfile se agregarán en el siguiente paso.
+## Ejecutar localmente
+
+```bash
+npm install
+npm start
+```
+
+Pruebas:
+
+```bash
+npm test
+```
+
+Endpoint interno: `POST /internal/v1/statistics` con `{ "matrices": { "q": [[1, 0], [0, 1]] } }`.
 
 ## Variables de entorno
 
