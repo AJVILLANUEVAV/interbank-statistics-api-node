@@ -23,6 +23,8 @@ paths:
       summary: Calculate statistics for named matrices
       operationId: calculateStatistics
       description: Internal endpoint called by the Matrix API over the Docker network.
+      security:
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -48,6 +50,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   schemas:
     Matrix:
       type: array
