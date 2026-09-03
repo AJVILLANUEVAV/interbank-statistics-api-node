@@ -19,6 +19,10 @@ npm test
 
 Endpoint interno: `POST /internal/v1/statistics` con `{ "matrices": { "q": [[1, 0], [0, 1]] } }`.
 
+## API-first
+
+El contrato OpenAPI está en `openapi/openapi.yaml`. Puedes importarlo en [Swagger Editor](https://editor.swagger.io/) o visualizarlo con cualquier herramienta compatible con OpenAPI 3.
+
 ## Variables de entorno
 
 - `PORT`: puerto HTTP, por defecto `8081`.
